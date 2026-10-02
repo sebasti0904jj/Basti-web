@@ -1,0 +1,920 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   PANTALLA DE ENTRADA
+======================================== */
+
+.entrada {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at center,
+            #202020 0%,
+            #0b0b0b 45%,
+            #050505 100%
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.entrada-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-principal {
+    font-size: clamp(60px, 12vw, 150px);
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-left: 0.25em;
+}
+
+.slogan {
+    font-size: 13px;
+    letter-spacing: 0.45em;
+    margin-top: 10px;
+    color: #bdbdbd;
+}
+
+.boton-entrar {
+    margin-top: 80px;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 11px;
+    letter-spacing: 0.35em;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.boton-entrar span {
+    display: block;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.boton-entrar:hover {
+    letter-spacing: 0.5em;
+    opacity: 0.6;
+}
+
+
+/* ========================================
+   OCULTAR / MOSTRAR SITIO
+======================================== */
+
+.oculto {
+    display: none;
+}
+
+.sitio {
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(8, 8, 8, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #222;
+}
+
+.logo-header {
+    font-size: 22px;
+    letter-spacing: 0.2em;
+}
+
+.navegacion {
+    display: flex;
+    gap: 35px;
+}
+
+.navegacion a {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #bdbdbd;
+
+    transition: 0.3s;
+}
+
+.navegacion a:hover {
+    color: white;
+}
+
+.menu-movil {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   SELECTOR DE LÍNEAS
+======================================== */
+
+.selector-lineas {
+    min-height: 100vh;
+
+    padding: 100px 5% 80px;
+
+    background: #080808;
+}
+
+.titulo-lineas {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.titulo-lineas span {
+    display: block;
+
+    font-size: 9px;
+    letter-spacing: 0.35em;
+
+    color: #777;
+
+    margin-bottom: 18px;
+}
+
+.titulo-lineas h2 {
+    font-size: clamp(28px, 5vw, 55px);
+
+    font-weight: 300;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   TRES LÍNEAS
+======================================== */
+
+.lineas-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    min-height: 650px;
+
+    gap: 2px;
+}
+
+.linea {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 650px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: flex-end;
+
+    transition:
+        transform 0.6s ease,
+        flex 0.6s ease;
+}
+
+.linea-fondo {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.basic-fondo {
+    background:
+        linear-gradient(
+            180deg,
+            #353535,
+            #111
+        );
+}
+
+.professional-fondo {
+    background:
+        linear-gradient(
+            180deg,
+            #1d2732,
+            #090b0e
+        );
+}
+
+.premium-fondo {
+    background:
+        linear-gradient(
+            180deg,
+            #362e2b,
+            #080706
+        );
+}
+
+.linea-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+}
+
+.linea-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 45px;
+
+    width: 100%;
+}
+
+.numero-linea {
+    display: block;
+
+    font-size: 10px;
+
+    color: #aaa;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 20px;
+}
+
+.linea h3 {
+    font-size: clamp(30px, 4vw, 55px);
+
+    font-weight: 300;
+
+    letter-spacing: 0.08em;
+}
+
+.linea-frase {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    letter-spacing: 0.2em;
+
+    color: #ddd;
+}
+
+.linea-descripcion {
+    margin-top: 15px;
+
+    max-width: 280px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.explorar-linea {
+    margin-top: 30px;
+
+    background: transparent;
+
+    border: 1px solid #777;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.explorar-linea span {
+    margin-left: 10px;
+}
+
+.explorar-linea:hover {
+    background: white;
+    color: black;
+}
+
+.linea:hover .linea-fondo {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   COLECCIONES
+======================================== */
+
+.coleccion {
+    padding: 120px 5%;
+
+    background: #0b0b0b;
+
+    border-top: 1px solid #222;
+}
+
+.coleccion-pro {
+    background: #090d11;
+}
+
+.premium {
+    background: #0a0908;
+}
+
+.coleccion-encabezado {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.coleccion-label {
+    font-size: 9px;
+
+    letter-spacing: 0.35em;
+
+    color: #777;
+}
+
+.coleccion h2 {
+    margin-top: 12px;
+
+    font-size: clamp(45px, 7vw, 90px);
+
+    font-weight: 300;
+
+    letter-spacing: 0.08em;
+}
+
+.coleccion-subtitulo {
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 0.3em;
+}
+
+.coleccion-texto {
+    max-width: 400px;
+
+    color: #999;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.coleccion-texto strong {
+    display: block;
+
+    margin-top: 15px;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+}
+
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+.productos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.producto {
+    background: #111;
+
+    border: 1px solid #222;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
+
+    border-color: #555;
+}
+
+.producto-imagen {
+    position: relative;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    background: #1b1b1b;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.04);
+}
+
+.producto-linea,
+.stock-limitado,
+.contador-unidades {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 7px 10px;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    border: 1px solid #555;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+}
+
+.contador-unidades {
+    left: auto;
+    right: 15px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+}
+
+.producto-info {
+    padding: 25px;
+}
+
+.producto-info h3 {
+    font-size: 15px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.15em;
+}
+
+.precio {
+    margin-top: 10px;
+
+    color: #ccc;
+
+    font-size: 14px;
+}
+
+.unidades {
+    margin-top: 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    color: #777;
+}
+
+.colores {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.color {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    border: 1px solid #777;
+}
+
+.negro {
+    background: #111;
+}
+
+.azul {
+    background: #15243c;
+}
+
+.lila {
+    background: #9b88c4;
+}
+
+.verde {
+    background: #657c68;
+}
+
+.petroleo {
+    background: #315a57;
+}
+
+.gris {
+    background: #888;
+}
+
+.beige {
+    background: #c8b89b;
+}
+
+.vino {
+    background: #631e2b;
+}
+
+.boton-producto {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: 1px solid #444;
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+
+    transition: 0.3s;
+}
+
+.boton-producto:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* ========================================
+   PREMIUM
+======================================== */
+
+.premium-label {
+    font-size: 8px;
+
+    letter-spacing: 0.3em;
+
+    color: #888;
+}
+
+.nombre-color {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+}
+
+
+/* ========================================
+   NOSOTROS
+======================================== */
+
+.nosotros {
+    min-height: 80vh;
+
+    padding: 120px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #202020,
+            #080808 65%
+        );
+}
+
+.nosotros > span {
+    font-size: 9px;
+
+    letter-spacing: 0.35em;
+
+    color: #777;
+}
+
+.nosotros h2 {
+    margin-top: 25px;
+
+    font-size: clamp(35px, 6vw, 80px);
+
+    font-weight: 300;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.04em;
+}
+
+.nosotros p {
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    color: #999;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    padding: 90px 5% 30px;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+}
+
+.footer h2 {
+    font-size: 55px;
+
+    font-weight: 300;
+
+    letter-spacing: 0.15em;
+}
+
+.footer > div:first-child p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 0.4em;
+}
+
+.footer-redes {
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 60px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.footer-redes span {
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+}
+
+.footer-redes a {
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.footer-redes a:hover {
+    color: #888;
+}
+
+.footer-final {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 80px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #222;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   WHATSAPP
+======================================== */
+
+.whatsapp-flotante {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 2000;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: black;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   RESPONSIVE - CELULAR
+======================================== */
+
+@media (max-width: 800px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .navegacion {
+        display: none;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    .selector-lineas {
+        padding: 80px 15px;
+    }
+
+    .lineas-grid {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .linea {
+        min-height: 500px;
+    }
+
+    .linea-contenido {
+        padding: 30px;
+    }
+
+    .coleccion {
+        padding: 80px 15px;
+    }
+
+    .coleccion-encabezado {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros {
+        padding: 90px 25px;
+    }
+
+    .footer {
+        padding: 70px 25px 25px;
+    }
+
+    .footer-final {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
